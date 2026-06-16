@@ -85,6 +85,7 @@
       text-align: center;
       padding: clamp(40px, 8vw, 80px) 20px clamp(40px, 6vw, 60px);
       border-bottom: 1px solid rgba(0,229,255,0.1);
+      overflow: hidden;
     }
 
     .hero-eyebrow {
@@ -107,14 +108,16 @@
 
     .hero-title {
       font-family: 'Orbitron', sans-serif;
-      font-size: clamp(2rem, 10vw, 6.5rem);
+      font-size: clamp(1.35rem, 8.5vw, 6.5rem);
       font-weight: 900;
-      letter-spacing: 0.04em;
+      letter-spacing: clamp(0.01em, 0.5vw, 0.04em);
       line-height: 1;
       color: #fff;
-      display: inline-block;
+      display: block;
       position: relative;
       animation: glow-pulse 3s ease-in-out infinite;
+      overflow: hidden;
+      padding: 0 4px;
     }
 
     .hero-title::before {
@@ -309,7 +312,7 @@
     }
 
     .threat-section::before {
-      content: '⚠ ACTIVE THREAT ADVISORY';
+      content: '\26A0 ACTIVE THREAT ADVISORY';
       position: absolute;
       top: -11px; left: 20px;
       background: var(--bg);
@@ -375,10 +378,7 @@
       clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
     }
 
-    .svc:hover {
-      border-color: rgba(0,229,255,0.35);
-      transform: translateY(-3px);
-    }
+    .svc:hover { border-color: rgba(0,229,255,0.35); transform: translateY(-3px); }
 
     .svc-icon { font-size: clamp(1.5rem, 5vw, 2rem); flex-shrink: 0; filter: drop-shadow(0 0 6px var(--neon-cyan)); }
 
@@ -402,12 +402,7 @@
       letter-spacing: 0.1em;
     }
 
-    .steps {
-      display: flex;
-      flex-direction: column;
-      max-width: 680px;
-      margin: 0 auto;
-    }
+    .steps { display: flex; flex-direction: column; max-width: 680px; margin: 0 auto; }
 
     .step {
       padding: 20px 0 20px 36px;
@@ -419,17 +414,13 @@
       content: attr(data-n);
       position: absolute;
       left: -16px;
-      width: 32px;
-      height: 32px;
+      width: 32px; height: 32px;
       background: var(--bg);
       border: 1px solid var(--neon-green);
       color: var(--neon-green);
       font-family: 'Orbitron', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 0.65rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: 0 0 10px rgba(0,255,136,.3);
     }
 
@@ -453,13 +444,8 @@
       gap: 14px;
     }
 
-    @media (max-width: 700px) {
-      .team { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 360px) {
-      .team { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 700px) { .team { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 360px) { .team { grid-template-columns: 1fr; } }
 
     .member {
       background: var(--bg-card);
@@ -473,8 +459,7 @@
 
     .member-avatar {
       font-size: clamp(2.5rem, 8vw, 3.5rem);
-      display: block;
-      margin-bottom: 10px;
+      display: block; margin-bottom: 10px;
       filter: drop-shadow(0 0 8px var(--neon-cyan));
       animation: float 4s ease-in-out infinite;
     }
@@ -486,20 +471,15 @@
     .member-name {
       font-family: 'Orbitron', sans-serif;
       font-size: clamp(0.65rem, 2.5vw, 0.85rem);
-      font-weight: 700;
-      color: var(--neon-cyan);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
+      font-weight: 700; color: var(--neon-cyan);
+      letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px;
     }
 
     .member-role {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(0.55rem, 1.8vw, 0.65rem);
-      letter-spacing: 0.15em;
-      color: var(--dim);
-      text-transform: uppercase;
-      margin-bottom: 10px;
+      letter-spacing: 0.15em; color: var(--dim);
+      text-transform: uppercase; margin-bottom: 10px;
     }
 
     .member-bio { font-size: clamp(0.75rem, 2.5vw, 0.82rem); color: var(--dim); line-height: 1.5; }
@@ -510,9 +490,7 @@
       gap: 14px;
     }
 
-    @media (max-width: 360px) {
-      .testimonials { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 360px) { .testimonials { grid-template-columns: 1fr; } }
 
     .testi {
       background: var(--bg-card);
@@ -523,28 +501,21 @@
 
     .testi::before {
       content: '"';
-      position: absolute;
-      top: 8px; left: 16px;
-      font-size: 3.5rem;
-      color: rgba(191,0,255,0.2);
-      font-family: Georgia, serif;
-      line-height: 1;
+      position: absolute; top: 8px; left: 16px;
+      font-size: 3.5rem; color: rgba(191,0,255,0.2);
+      font-family: Georgia, serif; line-height: 1;
     }
 
     .testi-text {
       font-size: clamp(0.82rem, 2.5vw, 0.92rem);
-      color: var(--text);
-      line-height: 1.6;
-      margin-bottom: 14px;
-      padding-top: 18px;
+      color: var(--text); line-height: 1.6;
+      margin-bottom: 14px; padding-top: 18px;
     }
 
     .testi-author {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(0.55rem, 1.8vw, 0.65rem);
-      letter-spacing: 0.15em;
-      color: var(--neon-purple);
-      text-transform: uppercase;
+      letter-spacing: 0.15em; color: var(--neon-purple); text-transform: uppercase;
     }
 
     .stars { color: var(--neon-yellow); font-size: 0.9rem; margin-bottom: 8px; }
@@ -560,29 +531,22 @@
     .cta-title {
       font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.2rem, 5vw, 2.8rem);
-      font-weight: 900;
-      color: #fff;
-      letter-spacing: 0.06em;
-      margin-bottom: 14px;
-      text-transform: uppercase;
+      font-weight: 900; color: #fff;
+      letter-spacing: 0.06em; margin-bottom: 14px; text-transform: uppercase;
     }
 
     .cta-sub {
       font-size: clamp(0.9rem, 3vw, 1.05rem);
-      color: var(--dim);
-      margin: 0 auto 36px;
-      max-width: 480px;
-      line-height: 1.6;
+      color: var(--dim); margin: 0 auto 36px;
+      max-width: 480px; line-height: 1.6;
     }
 
     .cta-phone {
       display: block;
       font-family: 'Orbitron', sans-serif;
       font-size: clamp(1.8rem, 9vw, 4rem);
-      font-weight: 900;
-      color: var(--neon-green);
-      text-decoration: none;
-      letter-spacing: 0.1em;
+      font-weight: 900; color: var(--neon-green);
+      text-decoration: none; letter-spacing: 0.1em;
       animation: glow-pulse 2s ease-in-out infinite;
       margin-bottom: 18px;
     }
@@ -590,9 +554,7 @@
     .cta-note {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(0.55rem, 2vw, 0.7rem);
-      letter-spacing: 0.2em;
-      color: var(--dim);
-      text-transform: uppercase;
+      letter-spacing: 0.2em; color: var(--dim); text-transform: uppercase;
     }
 
     footer {
@@ -605,28 +567,20 @@
     .footer-logo {
       font-family: 'Orbitron', sans-serif;
       font-size: clamp(0.9rem, 3vw, 1.1rem);
-      font-weight: 900;
-      color: var(--neon-green);
-      letter-spacing: 0.12em;
-      margin-bottom: 14px;
+      font-weight: 900; color: var(--neon-green);
+      letter-spacing: 0.12em; margin-bottom: 14px;
     }
 
     .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: clamp(12px, 4vw, 24px);
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      display: flex; justify-content: center;
+      gap: clamp(12px, 4vw, 24px); flex-wrap: wrap; margin-bottom: 16px;
     }
 
     .footer-links a {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(0.55rem, 2vw, 0.65rem);
-      letter-spacing: 0.15em;
-      color: var(--dim);
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s;
+      letter-spacing: 0.15em; color: var(--dim);
+      text-decoration: none; text-transform: uppercase; transition: color 0.2s;
     }
 
     .footer-links a:hover { color: var(--neon-cyan); }
@@ -634,9 +588,7 @@
     .footer-copy {
       font-family: 'Share Tech Mono', monospace;
       font-size: clamp(0.5rem, 1.8vw, 0.6rem);
-      letter-spacing: 0.15em;
-      color: #2a3a5a;
-      line-height: 1.8;
+      letter-spacing: 0.15em; color: #2a3a5a; line-height: 1.8;
     }
 
     .footer-copy span { color: var(--neon-green); }
@@ -656,15 +608,11 @@
   <h1 class="hero-title" data-text="GHOST//BUSTERS">GHOST<span class="hero-slash">//</span>BUSTERS</h1>
   <div class="hero-tagline">Who You Gonna Call?</div>
   <p class="hero-sub">Night City's only licensed paranormal elimination unit. From class-I vapors haunting your flats to class-X destructor entities threatening whole districts — we handle it all, no corp clearance required.</p>
-
   <div class="call-box">
     <div class="call-label">▸ REPORT A HAUNTING ◂</div>
     <a class="phone-number" href="tel:5552368">555-2368</a>
     <div class="phone-sub">24 / 7 / 365 · RESPONSE TIME UNDER 12 MIN</div>
-    <div class="avail-badge">
-      <span class="dot"></span>
-      ECTO-1 FUELED · OPERATORS STANDING BY
-    </div>
+    <div class="avail-badge"><span class="dot"></span>ECTO-1 FUELED · OPERATORS STANDING BY</div>
   </div>
 </div>
 
@@ -706,11 +654,11 @@
     <h2 class="sec-title">Our Services</h2>
   </div>
   <div class="services">
-    <div class="svc"><span class="svc-icon">🏠</span><div><div class="svc-name">Residential Clearance</div><div class="svc-text">Full sweep and elimination of spectral entities from flats, apartments, and stacks. Includes ectoplasm cleanup and post-clearance PKE verification.</div><div class="svc-price">FROM 2,500 € / VISIT</div></div></div>
-    <div class="svc"><span class="svc-icon">🏢</span><div><div class="svc-name">Corporate & Commercial</div><div class="svc-text">Discreet paranormal removal for offices, clubs, and businesses. We work nights. NDAs available. Corps get no special discount.</div><div class="svc-price">FROM 8,000 € / SITE</div></div></div>
-    <div class="svc"><span class="svc-icon">⚡</span><div><div class="svc-name">Emergency Response</div><div class="svc-text">Class-VII or higher? Full crew mobilization within 12 minutes. Proton packs charged, traps loaded. For when things have gotten very bad.</div><div class="svc-price">FROM 15,000 € · FLAT</div></div></div>
-    <div class="svc"><span class="svc-icon">🔍</span><div><div class="svc-name">PKE Survey</div><div class="svc-text">Not sure if you have a ghost? We scan the premises and provide a full threat classification report in under an hour.</div><div class="svc-price">500 € · FREE IF WE FIND ONE</div></div></div>
-    <div class="svc"><span class="svc-icon">🌃</span><div><div class="svc-name">Night City District Patrol</div><div class="svc-text">Weekly sweep for high-risk zones — Pacifica, Japantown, the Badlands border. Cyber specters and digital hauntings are our specialty.</div><div class="svc-price">FROM 4,000 € / WEEK</div></div></div>
+    <div class="svc"><span class="svc-icon">🏠</span><div><div class="svc-name">Residential Clearance</div><div class="svc-text">Full sweep and elimination of spectral entities from flats, apartments, and stacks. Includes ectoplasm cleanup and post-clearance PKE verification.</div><div class="svc-price">FROM 2,500 €$ / VISIT</div></div></div>
+    <div class="svc"><span class="svc-icon">🏢</span><div><div class="svc-name">Corporate & Commercial</div><div class="svc-text">Discreet paranormal removal for offices, clubs, and businesses. We work nights. NDAs available. Corps get no special discount.</div><div class="svc-price">FROM 8,000 €$ / SITE</div></div></div>
+    <div class="svc"><span class="svc-icon">⚡</span><div><div class="svc-name">Emergency Response</div><div class="svc-text">Class-VII or higher? Full crew mobilization within 12 minutes. Proton packs charged, traps loaded. For when things have gotten very bad.</div><div class="svc-price">FROM 15,000 €$ · FLAT</div></div></div>
+    <div class="svc"><span class="svc-icon">🔍</span><div><div class="svc-name">PKE Survey</div><div class="svc-text">Not sure if you have a ghost? We scan the premises and provide a full threat classification report in under an hour.</div><div class="svc-price">500 €$ · FREE IF WE FIND ONE</div></div></div>
+    <div class="svc"><span class="svc-icon">🌃</span><div><div class="svc-name">Night City District Patrol</div><div class="svc-text">Weekly sweep for high-risk zones — Pacifica, Japantown, the Badlands border. Cyber specters and digital hauntings are our specialty.</div><div class="svc-price">FROM 4,000 €$ / WEEK</div></div></div>
     <div class="svc"><span class="svc-icon">💀</span><div><div class="svc-name">Class-X Destructor Events</div><div class="svc-text">Gozer-level entities. Apocalyptic threat. We have done this before. Call immediately, do not engage, do not choose the form.</div><div class="svc-price">CALL FOR QUOTE · URGENT</div></div></div>
   </div>
 </div>
